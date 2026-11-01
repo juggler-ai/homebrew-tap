@@ -5,8 +5,7 @@ cask "juggler" do
   version "0.7.9"
   sha256 "c6b7cf608a3956c48f25ad54f3e8b94d880f99a9d5696d239cd57ac08e312c88"
 
-  url "https://github.com/juggler-ai/juggler/releases/download/v#{version}/Juggler-v#{version}.dmg",
-      verified: "github.com/juggler-ai/juggler/"
+  url "https://github.com/juggler-ai/juggler/releases/download/v#{version}/Juggler-v#{version}.dmg"
   name "Juggler"
   desc "See and control your coding agent, locally or remotely"
   homepage "https://juggler.studio/"
