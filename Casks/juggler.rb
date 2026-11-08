@@ -2,8 +2,8 @@
 # juggler-pro, and pushed here by its release workflow on every stable release.
 # Edit the template, not this file: the next release overwrites it.
 cask "juggler" do
-  version "0.7.9"
-  sha256 "c6b7cf608a3956c48f25ad54f3e8b94d880f99a9d5696d239cd57ac08e312c88"
+  version "0.8.0"
+  sha256 "1c77596467d8b97c665298841ec1ecbda963f8fdbd6982897c956739352eb99d"
 
   url "https://github.com/juggler-ai/juggler/releases/download/v#{version}/Juggler-v#{version}.dmg",
       verified: "github.com/juggler-ai/juggler/"
@@ -23,17 +23,22 @@ cask "juggler" do
   depends_on macos: :sonoma
 
   app "Juggler.app"
-  binary "#{appdir}/Juggler.app/Contents/MacOS/juggler"
+  binary "#{appdir}/Juggler.app/Contents/Helpers/juggler"
 
   uninstall quit: "studio.juggler.juggler"
 
+  # The server is a bundle of its own (Contents/Helpers/JugglerServer.app),
+  # whose WebKit data, caches and HTTP storage go under its own identifier.
   zap trash: [
     "~/.juggler",
     "~/Library/Caches/studio.juggler.juggler",
+    "~/Library/Caches/studio.juggler.juggler.server",
     "~/Library/HTTPStorages/studio.juggler.juggler",
+    "~/Library/HTTPStorages/studio.juggler.juggler.server",
     "~/Library/Logs/Juggler",
     "~/Library/Preferences/studio.juggler.juggler.plist",
     "~/Library/Saved Application State/studio.juggler.juggler.savedState",
     "~/Library/WebKit/studio.juggler.juggler",
+    "~/Library/WebKit/studio.juggler.juggler.server",
   ]
 end
