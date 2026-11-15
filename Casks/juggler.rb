@@ -2,8 +2,8 @@
 # juggler-pro, and pushed here by its release workflow on every stable release.
 # Edit the template, not this file: the next release overwrites it.
 cask "juggler" do
-  version "0.8.0"
-  sha256 "1c77596467d8b97c665298841ec1ecbda963f8fdbd6982897c956739352eb99d"
+  version "0.8.1"
+  sha256 "1ed38af96150507c649fbc604fe7b151668d69f912a920590eef74336a155c91"
 
   url "https://github.com/juggler-ai/juggler/releases/download/v#{version}/Juggler-v#{version}.dmg",
       verified: "github.com/juggler-ai/juggler/"
